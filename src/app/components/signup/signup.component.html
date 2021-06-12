@@ -1,0 +1,62 @@
+<section id="signup" class="signup py-5">
+  <div class="container">
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+    <!-- <h1>{{ signupForm.get("first_name")?.errors | json }}</h1> -->
+    <form class="w-75 mx-auto" [formGroup]="signupForm" (ngSubmit)="submitSignupForm(signupForm)">
+      <div class="form-group mb-3">
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">First Name</span>
+          <input class="form-control" id="first_name" type="text" formControlName="first_name" />
+        </div>
+        <div *ngIf="signupForm.get('first_name')?.errors != null && signupForm.get('first_name')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signupForm.get('first_name')?.errors?.required">First name is required</p>
+          <p *ngIf="signupForm.get('first_name')?.errors?.minlength">First name min length is 3</p>
+          <p *ngIf="signupForm.get('first_name')?.errors?.maxlength">First name max length 10</p>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">Last Name</span>
+          <input class="form-control" id="last_name" type="text" formControlName="last_name" />
+        </div>
+        <div *ngIf="signupForm.get('last_name')?.errors != null && signupForm.get('last_name')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signupForm.get('last_name')?.errors?.required">Last name is required</p>
+          <p *ngIf="signupForm.get('last_name')?.errors?.minlength">Last name min length is 3</p>
+          <p *ngIf="signupForm.get('last_name')?.errors?.maxlength">Last name max length 10</p>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">Email</span>
+          <input class="form-control" id="email" type="email" formControlName="email" />
+        </div>
+        <div *ngIf="signupForm.get('email')?.errors != null && signupForm.get('email')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signupForm.get('email')?.errors?.required">Email is required</p>
+          <p *ngIf="signupForm.get('email')?.errors?.email">Email is invalid</p>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">Password</span>
+          <input class="form-control" id="password" type="password" formControlName="password" />
+        </div>
+        <div *ngIf="signupForm.get('password')?.errors != null && signupForm.get('password')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signupForm.get('password')?.errors?.required">Password is required</p>
+          <p *ngIf="signupForm.get('password')?.errors?.pattern">Start with uppercase - min 3 char - max 8 char ...</p>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">Age</span>
+          <input class="form-control" id="age" type="number" formControlName="age" />
+        </div>
+        <div *ngIf="signupForm.get('age')?.errors != null && signupForm.get('age')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signupForm.get('age')?.errors?.required">Age is required</p>
+          <p *ngIf="signupForm.get('age')?.errors?.min">Age min 16 years</p>
+          <p *ngIf="signupForm.get('age')?.errors?.max">Age max 80 years</p>
+        </div>
+      </div>
+      <button [disabled]="signupForm.invalid" class="btn btn-info" type="submit">Signup</button>
+    </form>
+  </div>
+</section>

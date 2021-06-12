@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "./scss/variables";
+body {
+  background-color: $bgColor;
+  color: $fontColor;
+  font-family: $txtFont;
+}
+a {
+  color: $fontColor;
+  text-decoration: none;
+}
+a:hover {
+  color: $fontColor;
+  text-decoration: none;
+}
