@@ -2,7 +2,7 @@
   <div class="container">
     <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
     <!-- <h1>{{ signupForm.get("first_name")?.errors | json }}</h1> -->
-    <form class="w-75 mx-auto" [formGroup]="signupForm" (ngSubmit)="submitSignupForm(signupForm)">
+    <form class="py-5 w-75 mx-auto" [formGroup]="signupForm" (ngSubmit)="submitSignupForm(signupForm)">
       <div class="form-group mb-3">
         <div class="input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">First Name</span>
