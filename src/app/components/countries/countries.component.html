@@ -1,1 +1,43 @@
-<p>countries works!</p>
+<section id="countries" class="countries py-5">
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-lg-2" *ngFor="let country of filteredCountries">
+        <div class="countries__item py-3">
+          <a [routerLink]="['/countrydetails', country.id]">
+            <img [src]="country.flag" class="w-100 mb-2" [alt]="country.name" />
+            <h3 class="h6">{{ country.name }}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <nav aria-label="...">
+          <ul class="pagination justify-content-center align-items-center">
+            <li class="page-item">
+              <a class="page-link" tabindex="-1" aria-disabled="false">Previous</a>
+            </li>
+            <li [class.active]="currentPageId == '1'" class="page-item">
+              <a class="page-link" (click)="getCountriesPageData('1')">1</a>
+            </li>
+            <li [class.active]="currentPageId == '2'" class="page-item">
+              <a class="page-link" (click)="getCountriesPageData('2')">2</a>
+            </li>
+            <li [class.active]="currentPageId == '3'" class="page-item">
+              <a class="page-link" (click)="getCountriesPageData('3')">3</a>
+            </li>
+            <li [class.active]="currentPageId == '4'" class="page-item">
+              <a class="page-link" (click)="getCountriesPageData('4')">4</a>
+            </li>
+            <li [class.active]="currentPageId == '5'" class="page-item">
+              <a class="page-link" (click)="getCountriesPageData('5')">5</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" aria-disabled="false">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>

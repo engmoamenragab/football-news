@@ -1,1 +1,38 @@
-<p>home works!</p>
+<app-homeheader></app-homeheader>
+<section id="home" class="home py-5">
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-2" *ngFor="let teamPd of teamsPd">
+        <div class="home__item py-3">
+          <a [routerLink]="['details', teamPd.id]">
+            <img [src]="teamPd.crestUrl" class="w-100 mb-2" [alt]="teamPd.name" />
+            <h3 class="h6">{{ teamPd.name }}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row py-3">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-2" *ngFor="let teamPl of teamsPl">
+        <div class="home__item py-3">
+          <a [routerLink]="['details', teamPl.id]">
+            <img [src]="teamPl.crestUrl" class="w-100 mb-2" [alt]="teamPl.name" />
+            <h3 class="h6">{{ teamPl.name }}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row py-3">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-2" *ngFor="let teamBl1 of teamsBl1">
+        <div class="home__item py-3">
+          <a [routerLink]="['details', teamBl1.id]">
+            <img [src]="teamBl1.crestUrl" class="w-100 mb-2" [alt]="teamBl1.name" />
+            <h3 class="h6">{{ teamBl1.name }}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

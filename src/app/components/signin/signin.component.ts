@@ -11,12 +11,11 @@ import { Router } from "@angular/router";
 export class SigninComponent implements OnInit {
   error: string = "";
   constructor(private _AuthService: AuthService, private _Router: Router) {}
-
+  ngOnInit(): void {}
   signinForm = new FormGroup({
     email: new FormControl(null, [Validators.email, Validators.required]),
     password: new FormControl(null, [Validators.required]),
   });
-
   submitSigninForm(signinForm: FormGroup) {
     this._AuthService.signin(signinForm.value).subscribe(
       (response) => {
@@ -32,6 +31,4 @@ export class SigninComponent implements OnInit {
       () => {},
     );
   }
-
-  ngOnInit(): void {}
 }

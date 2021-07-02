@@ -1,0 +1,22 @@
+<section id="leaguedetails" class="leaguedetails py-5">
+  <div class="container">
+    <div class="row py-5 align-items-center justify-content-center">
+      <div class="col-lg-6">
+        <div class="leaguedetails__item">
+          <img [src]="leagueDetails.crestUrl" class="w-100" [alt]="leagueDetails.name" />
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="leaguedetails__item">
+          <h3 class="mb-3 fw-bold"><span class="fw-bold">Name: </span>{{ leagueDetails.name }}</h3>
+          <p class="lead mb-3"><span class="fw-bold">Short Name: </span>{{ leagueDetails.shortName }}</p>
+          <p class="lead mb-3"><span class="fw-bold">TLA: </span>{{ leagueDetails.tla }}</p>
+          <p class="lead mb-3"><span class="fw-bold">Founded: </span>{{ leagueDetails.founded }}</p>
+          <p class="lead mb-3"><span class="fw-bold">Country: </span>{{ leagueDetails.area?.name }}</p>
+          <p class="lead mb-3"><span class="fw-bold">Address: </span>{{ leagueDetails.address }}</p>
+          <p class="lead mb-3"><span class="fw-bold">Email: </span>{{ leagueDetails.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

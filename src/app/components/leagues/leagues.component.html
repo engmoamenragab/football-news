@@ -1,1 +1,14 @@
-<p>leagues works!</p>
+<section id="leagues" class="leagues py-5">
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-lg-2" *ngFor="let league of leagues">
+        <div class="leagues__item py-3">
+          <a [routerLink]="['/leaguedetails', league.league_key]">
+            <img [src]="league.league_logo" class="w-100 mb-2" [alt]="league.league_name" />
+            <h3 class="h6">{{ league.league_name }}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

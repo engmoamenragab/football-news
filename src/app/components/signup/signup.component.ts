@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
 export class SignupComponent implements OnInit {
   error: string = "";
   constructor(private _AuthService: AuthService, private _Router: Router) {}
-
+  ngOnInit(): void {}
   signupForm = new FormGroup({
     first_name: new FormControl(null, [Validators.minLength(3), Validators.maxLength(10), Validators.required]),
     last_name: new FormControl(null, [Validators.minLength(3), Validators.maxLength(10), Validators.required]),
@@ -19,7 +19,6 @@ export class SignupComponent implements OnInit {
     password: new FormControl(null, [Validators.pattern("^[A-Z][a-z0-9]{3,8}$"), Validators.required]),
     age: new FormControl(null, [Validators.min(16), Validators.max(80), Validators.required]),
   });
-
   submitSignupForm(signupForm: FormGroup) {
     this._AuthService.signup(signupForm.value).subscribe(
       (response) => {
@@ -33,6 +32,4 @@ export class SignupComponent implements OnInit {
       () => {},
     );
   }
-
-  ngOnInit(): void {}
 }

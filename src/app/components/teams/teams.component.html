@@ -1,1 +1,14 @@
-<p>teams works!</p>
+<section id="teams" class="teams py-5">
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-lg-2" *ngFor="let team of teams">
+        <div class="teams__item py-3">
+          <a [routerLink]="['/teamdetails', team.id]">
+            <img [src]="team.crestUrl" class="w-100 mb-2" [alt]="team.name" />
+            <h3 class="h6">{{ team.name }}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

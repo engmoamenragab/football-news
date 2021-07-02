@@ -1,8 +1,35 @@
 @import "../../../scss/variables";
 .navbar {
+  transition: all 0.2s ease-in-out;
   .container-fluid {
     .navbar-brand {
       font-family: $hdFont;
+    }
+    .navbar-toggler {
+      .navbar__toggler__icon {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: $fontColor;
+      }
+    }
+    .collapse.navbar-collapse {
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: $fontColor;
+            transition: color 0.2s ease-in-out;
+            &:hover {
+              color: $lightBgColor;
+            }
+          }
+        }
+        .nav-item.active {
+          .nav-link {
+            color: $lightBgColor;
+          }
+        }
+      }
     }
   }
 }

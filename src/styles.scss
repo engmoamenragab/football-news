@@ -2,7 +2,10 @@
 @import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 @import "./scss/variables";
+
 body {
   background-color: $bgColor;
   color: $fontColor;

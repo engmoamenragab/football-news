@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-lg">
+<nav id="nav" class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand text-uppercase fw-bolder" routerLink="">football news</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar__toggler__icon mb-1"></span>
+      <span class="navbar__toggler__icon mb-1"></span>
+      <span class="navbar__toggler__icon mb-1"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -13,7 +15,7 @@
         <li class="nav-item" routerLinkActive="active"><a *ngIf="isSignin" class="nav-link" routerLink="players">players</a></li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <input class="form-control me-2 mb-2" type="search" placeholder="Search" aria-label="Search" />
       </form>
       <div class="navbar__social">
         <a href="#"><i class="fab fa-facebook-f mx-1"></i></a>
@@ -24,7 +26,8 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item"><a *ngIf="!isSignin" class="nav-link" routerLink="signup">signup</a></li>
         <li class="nav-item"><a *ngIf="!isSignin" class="nav-link" routerLink="signin">signin</a></li>
-        <li class="nav-item"><a *ngIf="isSignin" class="nav-link">signout</a></li>
+        <li class="nav-item"><a *ngIf="isSignin" class="nav-link" (click)="isSignout()" style="cursor: pointer">signout</a></li>
+        <li class="nav-item"><a *ngIf="isSignin" class="nav-link" routerLink="settings" style="cursor: pointer">settings</a></li>
       </ul>
     </div>
   </div>

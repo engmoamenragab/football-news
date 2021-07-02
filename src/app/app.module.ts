@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
@@ -15,10 +16,32 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { HomeheaderComponent } from "./components/homeheader/homeheader.component";
+import { CarouselModule } from "ngx-owl-carousel-o";
+import { TeamdetailsComponent } from "./components/teamdetails/teamdetails.component";
+import { CountrydetailsComponent } from "./components/countrydetails/countrydetails.component";
+import { LeaguedetailsComponent } from "./components/leaguedetails/leaguedetails.component";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CountriesComponent, LeaguesComponent, TeamsComponent, PlayersComponent, SignupComponent, SigninComponent, SignoutComponent, NotfoundComponent, NavbarComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CountriesComponent,
+    LeaguesComponent,
+    TeamsComponent,
+    PlayersComponent,
+    SignupComponent,
+    SigninComponent,
+    SignoutComponent,
+    NotfoundComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomeheaderComponent,
+    TeamdetailsComponent,
+    CountrydetailsComponent,
+    LeaguedetailsComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, BrowserAnimationsModule, CarouselModule],
   providers: [],
   bootstrap: [AppComponent],
 })
